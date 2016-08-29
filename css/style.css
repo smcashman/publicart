@@ -1,0 +1,22 @@
+body {
+	text-align:center;
+}
+
+#map {
+        height: 100%;
+    }
+
+.placeName {
+	font-size:1.5em;
+	text-decoration: underline;
+   }
+
+.latlong {
+	font-size:1em;
+}
+
+#placesearch {
+	margin:0 auto;
+	max-width:100px;
+	margin-bottom:2em;
+}
