@@ -1,5 +1,7 @@
 body {
 	text-align:center;
+	font-family:'Permanent Marker', sans-serif;
+	background-color:#CBE6A3;
 }
 
 #map {
@@ -20,3 +22,8 @@ body {
 	max-width:100px;
 	margin-bottom:2em;
 }
+
+footer {
+	text-align: center;
+}
+
