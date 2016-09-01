@@ -4,27 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Art Directory</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<meta name="viewport" content="initial-scale=1.0">
    
 </head>
 <body>
-	<h1>Art Directory </h1>
+	<h1 class="title">Art Directory </h1>
 	<h3 id="instructions"> Enter a city name to find sites of interest! </h3>
 	
 	<input type="text" placeholder='Enter a city name' name="placesearch" id="placesearch">
 	<input type="submit" value="Submit" id="citysearch"><br>
 	
 
- <div id="map" style="height: 400px; width: 100%;">
+ 	<div id="map">
+	</div>
+	<div class="wrapper">
+	<div class='museumBox'>
+		<h2> Art Museums </h2>
+	</div>
+	<div class='galleryBox'>
+		<h2> Art Galleries </h2>
+	</div>
+	<div class='publicArtBox'>
+		<h2> Public Art </h2>
+	</div>
 </div>
-
-	<div class='foursquarebox'>
-	</div>
-
-	<div class='googlebox'>
-	</div>
-
 	<script>
       var map;
       function initMap() {

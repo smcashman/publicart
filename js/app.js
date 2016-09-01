@@ -1,19 +1,17 @@
+userSearch = ""
+ getSites = function(){
 
 
-$(document).ready(function() {
-    $("#citysearch").click(function(){
-        var userSearch = $("#placesearch").val();
-        console.log(userSearch);
-    
-        $.getJSON("https://api.foursquare.com/v2/venues/search?v=20131016&near="+userSearch+"&intent=browse&radius=800&categoryId=507c8c4091d498d9fc8c67a9&client_id=C2IEUINHBL2HEVOHIWNO0GGN5EUHK3PGYH03HCZRP2ETA4CF&client_secret=DOLF3UBQZOY5GX2DP3EXBQ5CW4AHEWMNDGRMH0IHJWZBDSIO", function(data){
+    //public art
+        $.getJSON("https://api.foursquare.com/v2/venues/search?v=20131016&near="+userSearch+"&intent=browse&radius=8000&categoryId=507c8c4091d498d9fc8c67a9&client_id=C2IEUINHBL2HEVOHIWNO0GGN5EUHK3PGYH03HCZRP2ETA4CF&client_secret=DOLF3UBQZOY5GX2DP3EXBQ5CW4AHEWMNDGRMH0IHJWZBDSIO", function(data){
         var myResponse = (data.response);
         //console.log(myResponse);
-        
-        $.getJSON("https://api.foursquare.com/v2/venues/search?v=20131016&near="+userSearch+"&intent=browse&radius=800&categoryId=4bf58dd8d48988d18f941735&client_id=C2IEUINHBL2HEVOHIWNO0GGN5EUHK3PGYH03HCZRP2ETA4CF&client_secret=DOLF3UBQZOY5GX2DP3EXBQ5CW4AHEWMNDGRMH0IHJWZBDSIO", function(artmuseum){
+       //museums 
+        $.getJSON("https://api.foursquare.com/v2/venues/search?v=20131016&near="+userSearch+"&intent=browse&radius=8000&categoryId=4bf58dd8d48988d18f941735&client_id=C2IEUINHBL2HEVOHIWNO0GGN5EUHK3PGYH03HCZRP2ETA4CF&client_secret=DOLF3UBQZOY5GX2DP3EXBQ5CW4AHEWMNDGRMH0IHJWZBDSIO", function(artmuseum){
         var Response = (artmuseum.response);
-        //console.log(Response);
-
-        $.getJSON("https://api.foursquare.com/v2/venues/search?v=20131016&near="+userSearch+"&intent=browse&radius=800&categoryId=4bf58dd8d48988d1e2931735&client_id=C2IEUINHBL2HEVOHIWNO0GGN5EUHK3PGYH03HCZRP2ETA4CF&client_secret=DOLF3UBQZOY5GX2DP3EXBQ5CW4AHEWMNDGRMH0IHJWZBDSIO", function(artgallery){
+        console.log(Response);
+//galleries
+        $.getJSON("https://api.foursquare.com/v2/venues/search?v=20131016&near="+userSearch+"&intent=browse&radius=8000&categoryId=4bf58dd8d48988d1e2931735&client_id=C2IEUINHBL2HEVOHIWNO0GGN5EUHK3PGYH03HCZRP2ETA4CF&client_secret=DOLF3UBQZOY5GX2DP3EXBQ5CW4AHEWMNDGRMH0IHJWZBDSIO", function(artgallery){
         var ArtResponse = (artgallery.response);
         console.log(ArtResponse);
 
@@ -24,19 +22,25 @@ $(document).ready(function() {
       console.log(centerlat);
 
       $.each(Response.venues,function(index,value){
+        $(".museumBox").append("<h4 style='text-decoration:underline'>"+this.name+"<h4>")
+        $(".museumBox").append("<h4>" +this.location.address+ "</h4>");
         locations.push([this.name,this.location.lat,this.location.lng]);
       })
 
        $.each(myResponse.venues,function(index,value){
+        $(".publicArtBox").append("<h4 style='text-decoration:underline'>"+this.name+"<h4>")
+        $(".publicArtBox").append("<h4>" +this.location.address+ "</h4>");
             locations.push([this.name,this.location.lat,this.location.lng])
         });
        $.each(ArtResponse.venues,function(index,value){
+        $(".galleryBox").append("<h4 style='text-decoration:underline'>"+this.name+"<h4>")
+        $(".galleryBox").append("<h4>" +this.location.address+ "</h4>");
         locations.push([this.name,this.location.lat,this.location.lng])
        })
         console.log(locations);
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
+      zoom: 12,
       center: new google.maps.LatLng(centerpoint,centerlat),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
@@ -61,9 +65,23 @@ $(document).ready(function() {
     });
 });
     });
-    });
+    };
 
-  
+$(document).ready(function() {
+    $("#citysearch").click(function(){
+        userSearch = $("#placesearch").val();
+        if ($(".museumBox:has(h4)")) {
+            $("h4").html("");
+            getSites()
+        }
+        else {
+            getSites();
+        }
+
+        //getSites()
+
+       
+  });
 });
 
 
