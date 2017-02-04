@@ -4,9 +4,9 @@ A modern one-page app to discover the art scene in your city or while traveling!
 
 ## Using the application
 
-![Mainpage](searchscreen.jpg?raw=true "Home page")
+![Mainpage](homepage.jpg?raw=true "Home page")
 Search for a city to see results!
-![Search Results](homepage.jpg?raw=true "Search Results Page")
+![Search Results](searchscreen.jpg?raw=true "Search Results Page")
 
 
 
@@ -21,12 +21,12 @@ The app draws data from the Foursquare API to find locations, and plots them on 
 
 ## Tools
 
-* [JQuery](https://nodejs.org/en/) - Javascript Library
-* [Google Maps](https://www.mongodb.com/) - Database
-* [Foursquare](http://mongoosejs.com/) - Used to work with database
+* [JQuery](https://jquery.com/) - Javascript Library
+* [Google Maps](https://developers.google.com/maps/) - Location & Maps API
+* [Foursquare](https://developer.foursquare.com/) - Database of places according to category
 
 
 
 ## Authors
 
-* **Sara Cashman** - [Sara Cashman](https://github.com/smcashman)
+* **Sara Cashman** - Portfolio(https://smcashman.github.io)
