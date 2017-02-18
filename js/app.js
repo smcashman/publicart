@@ -68,6 +68,19 @@ userSearch = ""
     };
 
 $(document).ready(function() {
+  $("#placesearch").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#citysearch").click();
+        userSearch = $("#placesearch").val();
+        if ($(".museumBox:has(h4)")) {
+            $("h4").html("");
+            getSites()
+        }
+        else {
+            getSites();
+        }
+    }
+});
     $("#citysearch").click(function(){
         userSearch = $("#placesearch").val();
         if ($(".museumBox:has(h4)")) {

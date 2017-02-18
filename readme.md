@@ -13,6 +13,10 @@ Search for a city to see results!
 ## Use Case
 PublicArt allows you to discover new corners of the art world - museums, street art, galleries, etc. 
 
+## UX
+
+## Working Prototype
+A working prototype of the app is available at: (https://smcashman.github.io/publicart/)
 
 
 ## Technical
