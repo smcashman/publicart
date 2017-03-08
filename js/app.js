@@ -21,23 +21,27 @@ userSearch = ""
       console.log(centerpoint);
       console.log(centerlat);
 
+      $(".museumBox").append("<h2> Art Museums </h2>");
+      $(".publicArtBox").append("<h2>Art Galleries</h2>");
+      $(".galleryBox").append("<h2> Public Art </h2>");
+
       $.each(Response.venues,function(index,value){
-        $(".museumBox").append("<h4 style='text-decoration:underline'>"+this.name+"<h4>")
-        $(".museumBox").append("<h4>" +this.location.address+ "</h4>");
+        $(".museumBox").append('<h4 style="text-decoration:underline">'+this.name+'</h4>')
+        $(".museumBox").append('<h4>'+this.location.address+ '</h4>');
         locations.push([this.name,this.location.lat,this.location.lng]);
       })
 
        $.each(myResponse.venues,function(index,value){
-        $(".publicArtBox").append("<h4 style='text-decoration:underline'>"+this.name+"<h4>")
-        $(".publicArtBox").append("<h4>" +this.location.address+ "</h4>");
+        $(".publicArtBox").append('<h4 style="text-decoration:underline">'+this.name+'</h4>')
+        $(".publicArtBox").append('<h4>'+this.location.address+'</h4>');
             locations.push([this.name,this.location.lat,this.location.lng])
         });
        $.each(ArtResponse.venues,function(index,value){
-        $(".galleryBox").append("<h4 style='text-decoration:underline'>"+this.name+"<h4>")
-        $(".galleryBox").append("<h4>" +this.location.address+ "</h4>");
+        $(".galleryBox").append('<h4 style="text-decoration:underline">'+this.name+'</h4>')
+        $(".galleryBox").append('<h4>'+this.location.address+'</h4>');
         locations.push([this.name,this.location.lat,this.location.lng])
        })
-        console.log(locations);
+
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
@@ -68,6 +72,22 @@ userSearch = ""
     };
 
 $(document).ready(function() {
+  $("#placesearch").keyup(function(event){
+    if(event.keyCode == 13) {
+          $('#citysearch').click(function(){
+            userSearch = $("#placesearch").val();
+        if ($(".museumBox:has(h4)")) {
+            $("h4").html("");
+            getSites()
+        }
+        else {
+            getSites();
+        }
+ 
+        });
+        };
+          });
+
     $("#citysearch").click(function(){
         userSearch = $("#placesearch").val();
         if ($(".museumBox:has(h4)")) {
@@ -77,11 +97,13 @@ $(document).ready(function() {
         else {
             getSites();
         }
+ 
+        });
 
-        //getSites()
-
-       
-  });
+    $('#addMuseum').parent("h4").click(function() {
+      console.log(this)
+      $('#siteList').append('<p>'+this+'</p>')
+    })
 });
 
 

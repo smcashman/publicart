@@ -9,8 +9,10 @@
    
 </head>
 <body>
+	<div class="headerwrapper">
 	<h1 class="title">Art Directory </h1>
 	<h3 id="instructions"> Enter a city name to find sites of interest! </h3>
+</div>
 	
 	<input type="text" placeholder='Enter a city name' name="placesearch" id="placesearch">
 	<input type="submit" value="Submit" id="citysearch"><br>
@@ -18,17 +20,22 @@
 
  	<div id="map">
 	</div>
+
 	<div class="wrapper">
 	<div class='museumBox'>
-		<h2> Art Museums </h2>
+		
 	</div>
 	<div class='galleryBox'>
-		<h2> Art Galleries </h2>
+	
 	</div>
 	<div class='publicArtBox'>
-		<h2> Public Art </h2>
+		
 	</div>
-</div>
+	</div>
+
+	<div id="siteList">
+		<i class="fa fa-plus" aria-hidden="true"></i>
+	</div>
 	<script>
       var map;
       function initMap() {
@@ -42,6 +49,7 @@
     async defer></script>
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/app.js"></script>
+
 </body>
 <footer>
 	<a href="https://foursquare.com/" target=blank> Locations powered by Foursquare </a>
