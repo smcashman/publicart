@@ -73,19 +73,21 @@ userSearch = ""
 
 $(document).ready(function() {
   $("#placesearch").keyup(function(event){
+    console.log("HERROOOOO")
     if(event.keyCode == 13) {
-          $('#citysearch').click(function(){
-            userSearch = $("#placesearch").val();
+        console.log("enter keyyyy")
+        userSearch = $("#placesearch").val();
         if ($(".museumBox:has(h4)")) {
             $("h4").html("");
+            $('h2').html("");
             getSites()
         }
         else {
             getSites();
         }
  
-        });
         };
+      
           });
 
     $("#citysearch").click(function(){

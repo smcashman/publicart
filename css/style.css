@@ -6,16 +6,20 @@ body {
 
 .title {
 	font-family:'Pacifico', sans-serif;
-	font-size:2em;
+	font-size:36pt;
 }
 
 #instructions {
-	font-family:'Pacifico', sans-serif;
+	font-family:'Slabo 27px', sans-serif;
 	font-size:1.5em;
 }
 
 h2{
 	font-family:'Pacifico', sans-serif;
+}
+
+h4{
+	font-family:'Slabo 27px', sans-serif;
 }
 
 #map {
@@ -41,6 +45,7 @@ h2{
 	height:40px;
 	line-height: 1.6;
 	font-size:18pt;
+	font-family: 'Slabo 27px', sans-serif;
 	border:2px solid black;
 	margin-bottom:2em;
 }
@@ -52,8 +57,9 @@ h2{
 #citysearch{
 	border-radius:5px;
 	height:30px;
-	width:50px;
-
+	width:55px;
+	font-family: 'Slabo 27px', sans-serif;
+	font-size: 11pt;
 }
 
 #citysearch:hover{
@@ -93,7 +99,9 @@ footer {
 
 @media only screen and (max-width: 900px){
 	#map {
-		width:100%;
+		width:80%;
+		margin:0 auto;
+		vertical-align: center;
 	}
 
 	.wrapper {
