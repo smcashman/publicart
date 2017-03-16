@@ -70,6 +70,7 @@ userSearch = ""
 $(document).ready(function() {
   $("#placesearch").keyup(function(event){
     if(event.keyCode == 13){
+        $("#citysearch").css("background-color","#F7584C");
         $("#citysearch").click();
         userSearch = $("#placesearch").val();
         if ($(".museumBox:has(h4)")) {
