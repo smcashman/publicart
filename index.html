@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Art Directory</title>
+	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
@@ -23,6 +24,7 @@
 	</div>
 
 	<div class="wrapper">
+		<p id="intro"> Welcome to Art Directory! Search a city name to see a list of art galleries, museums, and public art.</p>
 	<div class='museumBox'>
 		
 	</div>
@@ -38,10 +40,28 @@
 		<i class="fa fa-plus" aria-hidden="true"></i>
 	</div>
 	<script>
-      var map;
+	var map;
+	// var getLatitude;
+	// var getLongitude;
+	// var useLatitude;
+	// var useLongitude;
+
+	// function getLocation() {
+ //    if (navigator.geolocation) {
+ //        navigator.geolocation.getCurrentPosition(showPosition);
+ //    } else {
+ //        useLatitude = 44.65;
+ //        useLongitude = -63.58;
+ //    }
+	// 	}
+	// function showPosition(position) {
+ //    console.log("Latitude: " + position.coords.latitude + 
+ //    "<br>Longitude: " + position.coords.longitude);
+	// 	}
+      
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 46.35744, lng: -61.26317},
+          center: {lat: 44.65, lng: -63.58},
           zoom: 13
         });
       }
@@ -53,6 +73,6 @@
 
 </body>
 <footer>
-	<a href="https://foursquare.com/" target=blank> Locations powered by Foursquare </a>
+	<a id="foursq" href="https://foursquare.com/" target=blank> Locations powered by Foursquare </a>
 	</footer>
 </html>

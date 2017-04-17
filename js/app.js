@@ -15,30 +15,33 @@ userSearch = ""
         var ArtResponse = (artgallery.response);
         console.log(ArtResponse);
 
+        $('.wrapper').show();
+
       var locations = []
       var centerpoint = myResponse.venues[0].location.lat
       var centerlat = myResponse.venues[0].location.lng
       console.log(centerpoint);
       console.log(centerlat);
 
+      $('#intro').hide();
       $(".museumBox").append("<h2> Art Museums </h2>");
       $(".publicArtBox").append("<h2>Art Galleries</h2>");
       $(".galleryBox").append("<h2> Public Art </h2>");
 
       $.each(Response.venues,function(index,value){
         $(".museumBox").append('<h4 style="text-decoration:underline">'+this.name+'</h4>')
-        $(".museumBox").append('<h4>'+this.location.address+ '</h4>');
+        $(".museumBox").append('<p class="address">'+this.location.address+ '</p>');
         locations.push([this.name,this.location.lat,this.location.lng]);
       })
 
        $.each(myResponse.venues,function(index,value){
         $(".publicArtBox").append('<h4 style="text-decoration:underline">'+this.name+'</h4>')
-        $(".publicArtBox").append('<h4>'+this.location.address+'</h4>');
+        $(".publicArtBox").append('<p class="address">'+this.location.address+'</p>');
             locations.push([this.name,this.location.lat,this.location.lng])
         });
        $.each(ArtResponse.venues,function(index,value){
         $(".galleryBox").append('<h4 style="text-decoration:underline">'+this.name+'</h4>')
-        $(".galleryBox").append('<h4>'+this.location.address+'</h4>');
+        $(".galleryBox").append('<p class="address">'+this.location.address+'</p>');
         locations.push([this.name,this.location.lat,this.location.lng])
        })
 
@@ -73,7 +76,6 @@ userSearch = ""
 
 $(document).ready(function() {
   $("#placesearch").keyup(function(event){
-    console.log("HERROOOOO")
     if(event.keyCode == 13) {
         console.log("enter keyyyy")
         userSearch = $("#placesearch").val();

@@ -7,19 +7,28 @@ body {
 .title {
 	font-family:'Pacifico', sans-serif;
 	font-size:36pt;
+	margin-bottom:30px;
+	margin-top:25px;
 }
 
 #instructions {
 	font-family:'Slabo 27px', sans-serif;
 	font-size:1.5em;
+	margin-bottom:15px;
 }
 
 h2{
 	font-family:'Pacifico', sans-serif;
+	font-size: 18pt;
+	margin-bottom:10px;
+}
+
+h4, p{
+	font-family:'Slabo 27px', sans-serif;
 }
 
 h4{
-	font-family:'Slabo 27px', sans-serif;
+	font-size: 14pt;
 }
 
 #map {
@@ -29,6 +38,10 @@ h4{
         float:left;
         border: 3px solid black;
     }
+
+.address{
+	margin-bottom:15px;
+}
 
 .placeName {
 	font-size:1.5em;
@@ -50,21 +63,26 @@ h4{
 	margin-bottom:2em;
 }
 
-#placesearch:focus{
-	border: 2px solid #F7584C;
-}
+
 
 #citysearch{
-	border-radius:5px;
-	height:30px;
-	width:55px;
+	color: black;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid #999999;
+    background-color: #5c85d6;
+    padding: 8px;
+    border-radius: 3px;
 	font-family: 'Slabo 27px', sans-serif;
-	font-size: 11pt;
+	vertical-align: top;
+	margin-top:6px;
 }
-
+#intro{
+	padding:5px;
+}
 #citysearch:hover{
 	cursor: pointer;
-	background-color:#F7584C;
+	background-color: #adc2eb;
 }
 
 footer {
@@ -72,13 +90,6 @@ footer {
 	width:100%;
 	float:left;
 }
-/*
-.headerwrapper{
-	background-color: white;
-	opacity:.6;
-	width:50%;
-	margin:0 auto;
-}*/
 
 
 .museumBox, .galleryBox, .PublicArtbox {
@@ -94,7 +105,16 @@ footer {
 	width:22%;
 	max-height:400px;
 	overflow-y:scroll;
+	background-color: white;
+	border: 3px solid black;
+}
 
+#foursq{
+	text-decoration: none;
+	color:black;
+	background-color: white;
+	opacity: 1;
+	font-family: "Slabo 27px";
 }
 
 @media only screen and (max-width: 900px){
